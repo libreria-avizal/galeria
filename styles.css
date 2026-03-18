@@ -1,0 +1,514 @@
+/* --- Base --- */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 10px;
+  background: #f5f5f5;
+}
+.gallery_header {
+margin-top: 0.5rem;
+margin-bottom: 0.5rem;
+}
+
+
+
+#ordering-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.0rem;
+}
+
+.left-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.right-buttons {
+  /* No necesita estilos extra, pero puedes añadir aquí si deseas */
+}
+
+#ordering-controls button {
+  padding: 0.30rem 0.5rem;
+  background-color: white;
+  /* fondo blanco por defecto */
+  font-size: small;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-color: black;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: auto;
+  align-self: center;
+  cursor: pointer;
+}
+
+#ordering-controls button.active {
+  background-color: #ffe01b;
+  /* fondo amarillo cuando está activo */
+}
+
+/* --- Galería --- */
+.gallery {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 30px;
+  /* siempre, como mínimo, 2 columnas */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+}
+
+/*  ≥600 px → 3 col */
+@media (min-width:600px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*  ≥900 px → 4 col */
+@media (min-width:900px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/*  ≥1200 px → 5 col */
+@media (min-width:1200px) {
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* --- Tarjeta libro --- */
+.book {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+  text-align: center;
+  padding: 10px;
+}
+
+.book img {
+  width: 100%;
+  /* llena toda la tarjeta */
+  /*height:auto;*/
+  aspect-ratio: 2/3.2;
+  object-fit: cover;
+  max-height: 60vh;
+  border-radius: 5px;
+}
+
+.details {
+  margin-top: 10px;
+}
+
+.details h3 {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.details p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/*—- Etiqueta “Oferta” en la esquina —-*/
+.book {
+  /* el contenedor de la portada */
+  position: relative;
+  /* referencia para el pseudo-elemento */
+}
+
+.book.newbook::before {
+  /* círculo rojo */
+  content: "NUEVO";
+  position: absolute;
+  top: 0px;
+  /* separa del borde */
+  left: 0px;
+  width: 20%;
+  height: 10%;
+  border-radius: 32.8%;
+  background: #e53935;
+  /* color del círculo */
+  color: #fff;
+  font-size: 80%;
+  font-weight: bold;
+  display: flex;
+  /* centra el texto */
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  /* no bloquea el clic en la imagen */
+  z-index: 1;
+  /* queda por encima de la foto */
+}
+
+.book.nonewbook::before {
+  /* círculo rojo */
+  content: "SEMI NUEVO";
+  position: absolute;
+  top: 0px;
+  /* separa del borde */
+  left: 0px;
+  width: 20%;
+  height: 10%;
+  border-radius: 32.8%;
+  background: #e53935;
+  /* color del círculo */
+  color: #fff;
+  font-size: 80%;
+  font-weight: bold;
+  display: flex;
+  /* centra el texto */
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  /* no bloquea el clic en la imagen */
+  z-index: 1;
+  /* queda por encima de la foto */
+}
+
+
+.book.oldbook::before {
+  /* círculo rojo */
+  content: "VINTAGE";
+  position: absolute;
+  top: 0px;
+  /* separa del borde */
+  left: 0px;
+  width: 20%;
+  height: 10%;
+  border-radius: 32.8%;
+  background: #e53935;
+  /* color del círculo */
+  color: #fff;
+  font-size: 80%;
+  font-weight: bold;
+  display: flex;
+  /* centra el texto */
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  /* no bloquea el clic en la imagen */
+  z-index: 1;
+  /* queda por encima de la foto */
+}
+
+
+/* El contenedor de cada libro se comporta como columna */
+.book {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* asegura altura completa de la tarjeta */
+}
+
+/* La zona de detalles ocupa todo el alto disponible */
+.book .details {
+  flex: 1;
+  /* llena el espacio sobrante */
+  display: flex;
+  flex-direction: column;
+}
+
+
+.buy-btn {
+  display: inline-flex;
+  /* habilita centrado */
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 0.75rem 1rem;
+  background-color: #ffe01b;
+  border-color: #e53935;
+  color: black;
+  font-size: 80%;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-style: hidden;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: auto;
+  align-self: center;
+
+}
+.close-btn {
+  margin-top: 10px;
+  padding: 0.75rem 1rem;
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+/*  ≥600 px → 3 col */
+@media (max-width:700px) {
+
+  .book {
+    /* el contenedor de la portada */
+    position: relative;
+    /* referencia para el pseudo-elemento */
+  }
+
+  .book.newbook::before {
+    font-size: 0.7rem;
+    width: 23%;
+    height: 9%;
+  }
+
+  .book.oldbook::before {
+    font-size: 0.6rem;
+    width: 27%;
+    height: 10%;
+  }
+
+  .book.nonewbook::before {
+    font-size: 0.7rem;
+    width: 25%;
+    height: 10%;
+  }
+
+  .buy-btn {
+    font-size: 80%;
+    font-weight: normal;
+  }
+
+  #ordering-controls button {
+    font-size: 0.7rem;
+  }
+
+
+
+}
+
+.filter-tooltip {
+  position: absolute;
+  z-index: 9999;
+  background: #fffbe8;
+  color: #333;
+  padding: 0.7em 1.2em;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.09);
+  border: 1px solid #ffe382;
+  font-size: 0.99em;
+  line-height: 1.5;
+  min-width: 100px;
+  max-width: 100%x;
+  pointer-events: none; /* solo permite click-through, excepto para cierre JS */
+  opacity: 0;
+  transition: opacity 0.22s;
+}
+.filter-tooltip.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#filters .info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  padding: 0;
+  margin-left: 0.0rem;
+  margin-right: 0.4rem;
+  border: 2px solid #54aaf8;      /* Azul claro */
+  background: transparent;
+  color: #54aaf8;                 /* Azul claro para la "i" */
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: box-shadow 0.18s, border-color 0.15s;
+  outline: none;
+  font-style: italic;
+}
+
+.filter-btn {
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #222;
+  padding: .5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+  margin-right: .1rem;
+}
+
+.filter-btn.active {
+  background: #0d6efd;   /* color por defecto activo */
+  color: #fff;
+  border-color: #0d6efd;
+}
+
+/* colores por filtro (opcional) */
+.filter-btn.active[data-filter="newbook"]   { background: #7a3ac9; border-color:#7a3ac9; }
+.filter-btn.active[data-filter="nonewbook"] { background: #7a3ac9; border-color:#7a3ac9; }
+.filter-btn.active[data-filter="oldbook"]   { background: #7a3ac9; border-color:#7a3ac9; }
+
+
+
+#lightbox img {
+  width: 25vw;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+#lightbox .details-box {
+  
+
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  flex: 1;
+  align-items: center;
+}
+
+#lightbox p {
+    margin: 0.5rem;
+}
+
+/* lightbox oculto */
+#lightbox {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  padding: 0px 32px;
+  margin: 0px auto;
+  gap: 24px; /* Espacio entre imagen y detalles */
+  position: fixed;
+  inset: 0;
+  background: #fff;;
+  display: none;
+  /* se muestra con JS */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  max-width: 650px;
+  height: 100%;
+}
+
+#lightbox img {
+  max-width: 90vw;
+  /* se “maximiza” sin fullscreen /
+  max-height: 90vh;*/
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .4);
+}
+
+#lightbox p[name=author]::before{content: "Autor:  "}
+#lightbox p[name=edit]::before{content: "Editorial:  "}
+#lightbox p[name=format]::before{content: "Encuadernación:  "}
+#lightbox p[name=pages]::before{content: "Páginas:  "}
+#lightbox p[name=height]::before{content: "Alto:  "}
+#lightbox p[name=width]::before{content: "Ancho:  "}
+#lightbox p[name=isbn]::before{content: "ISBN:  "}
+#lightbox p[name=price]::before{content: "Precio:  "}
+
+@media (min-width:800px) {
+
+  #ordering-controls {
+    display: flex;
+    justify-content: left;
+  }
+  .right-buttons {
+  margin-left: 1rem;
+  }
+
+}
+
+
+@media (min-width:1400px) {
+
+  #lightbox {
+    margin: 0px auto;
+    max-width: 1000px;
+  }
+
+}
+@media (max-width:1000px) {
+
+  #lightbox {
+    max-height: 100%;
+    margin: 0px auto;
+  }
+  #ordering-controls {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+}
+@media (max-width:600px) {
+
+  #lightbox {
+    max-height: 100%;
+    width: 100%;
+    margin-top: 10vw;
+    flex-direction: column;
+    /*margin: auto auto;*/
+    padding: 0px;
+  margin: auto auto;
+  gap: 0;
+  }
+
+#lightbox img { 
+    margin-top: 0.5rem;
+    width: 100%;           /* ocupar todo el ancho disponible */
+    height: auto;          /* mantener proporción real */
+    max-height: 57%;      /* que no se limite por altura */
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .4);
+    object-fit: contain;      /* mostrarla tal cual es */
+    display: block;        /* evitar espacios de imagen inline */
+    max-width: 17rem;
+}
+#lightbox h3 {
+  text-align: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0;
+  margin-bottom: 0.0rem;
+  margin-top: 0.7rem;
+}
+#lightbox p {
+  margin: 0.2rem;
+  width: 14rem;
+  /* se “maximiza” sin fullscreen /
+  max-height: 90vh;*/
+  border-radius: 6px;
+}
+#lightbox .buy-btn {
+  margin: 0;
+}
+
+}
+
+@media (max-height:500px) {
+  #lightbox{
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  #lightbox p{
+    margin: 0.1rem;
+  }
+  
+  #lightbox h3{
+    margin: 0.1rem;
+  }
+
+  .book img{
+    margin-top: 0;
+    max-height: 80vw;
+
+  }
+
+}

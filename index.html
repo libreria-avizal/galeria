@@ -1,0 +1,3299 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Feria de Libros</title>
+    <link href="./styles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7"></script>
+</head>
+
+<body>
+    <input id="buscador" type="search" placeholder="Buscar libros…" autocomplete="off"
+        style="width:100%;padding:8px;margin-bottom:1rem">
+
+    <div id="ordering-controls">
+        <div class="left-buttons">
+            <button id="clear-sort" style="display:none">
+                Quitar ordenamiento
+            </button>
+            <button id="sort-price" data-order="desc">
+                Ordenar x precio
+            </button>
+        </div>
+        <div class="right-buttons">
+            <button id="home-btn" style="background: #ffe01b; margin-left: 0.5rem">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+                    <path d="M3 11.5L12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-5h-6v5H4a1 1 0 0 1-1-1v-8.5z" stroke="#222"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="filters">
+        <button type="button" class="filter-btn" data-filter="newbook">
+            Nuevo
+        </button>
+        <button type="button" class="info-btn" title="Información sobre libros nuevos" tabindex="0">ℹ</button>
+        <button type="button" class="filter-btn" data-filter="nonewbook">
+            Semi-nuevo
+
+        </button>
+        <button type="button" class="info-btn" title="Información sobre libros semi-nuevos" tabindex="0">ℹ</button>
+        <button type="button" class="filter-btn" data-filter="oldbook">
+            Vintage
+        </button>
+        <button type="button" class="info-btn" title="Información sobre libros vintage" tabindex="0">ℹ</button>
+    </div>
+    <h2 class="gallery_header">LIBROS NUEVOS</h2>
+    <div class="gallery new">
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61o7sijCq+L._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Proceso</h3>
+                <p name="author">Franz Kafka</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>264</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788497592819</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://images-na.ssl-images-amazon.com/images/I/61HxFwspiVL._AC_UL900_SR615,900_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Memorias del Subsuelo</h3>
+                <p name="author">Fiódor Dostoievski</p>
+                <p name="edit">Penguin Clasicos</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>184</p>
+                <p name="height" hidden>18.9 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788491057512</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/816Zo7AUQeL._SY425_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Requiem por una Mujer</h3>
+                <p name="author">William Faulkner</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>256</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788466364294</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81RYPKGfBtL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Larga Marcha</h3>
+                <p name="author">Stephen King</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>352</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788497930017</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/51YUWprnQbL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Castillo</h3>
+                <p name="author">Franz Kafka</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>368</p>
+                <p name="height" hidden>18.9 cm</p>
+                <p name="width" hidden>12.4 cm</p>
+                <p name="isbn" hidden>9788497593267</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61JgeTiC4gL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Las Cuatro Estaciones I</h3>
+                <p name="author">Stephen King</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>400</p>
+                <p name="height" hidden>18.9 cm</p>
+                <p name="width" hidden>12.6 cm</p>
+                <p name="isbn" hidden>9788497931311</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81NOBM3R17L.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El extraño caso del Dr. Jekyll y Mr. Hyde</h3>
+                <p name="author">Robert Louis Stevenson</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>160</p>
+                <p name="height" hidden>17.5 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9786287624238</p>
+                <p name="price">s/ 35</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/716uLqdTXGL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Amuleto</h3>
+                <p name="author">Roberto Bolaño</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>136</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786073157100</p>
+                <p name="price">s/ 45</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.penguinlibros.com/es/6445703-large_default/momentos-estelares-de-la-humanidad.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Momentos Estelares de la Humanidad</h3>
+                <p name="author">Stefan Zweig</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>296</p>
+                <p name="height" hidden>18.8 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788466378963</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/719ADJoXneL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Campana de Cristal</h3>
+                <p name="author">Sylvia Plath</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>272</p>
+                <p name="height" hidden>18.8 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788466359177</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://www.elvirrey.com/imagenes/9791387/979138765262.GIF"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Matar a un Ruiseñor</h3>
+                <p name="author">Harper Lee</p>
+                <p name="edit">B de Bolsillo</p>
+                <p name="format">Tapa Flexidura</p>
+                <p name="pages" hidden>416</p>
+                <p name="height" hidden>19.3 cm</p>
+                <p name="width" hidden>13.4 cm</p>
+                <p name="isbn" hidden>9791387652623</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://cdnx.jumpseller.com/queleoconce/image/59378598/resize/540/540?1737557724"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Exorcista</h3>
+                <p name="author">William Peter Blatty</p>
+                <p name="edit">B de Bolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>416</p>
+                <p name="height" hidden>18.9 cm</p>
+                <p name="width" hidden>12.8 cm</p>
+                <p name="isbn" hidden>9788413145303</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://www.alianzaeditorial.es/imagenes/libros/grande/9788420682884-divina-comedia.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Divina Comedia</h3>
+                <p name="author">Dante Alighieri</p>
+                <p name="edit">Alianza Editorial</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>736</p>
+                <p name="height" hidden>20.5 cm</p>
+                <p name="width" hidden>13.5 cm</p>
+                <p name="isbn" hidden>9788420682884</p>
+                <p name="price">s/ 69</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://www.alianzaeditorial.es/imagenes/blog/9788411483025-soy-un-gato.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Soy un Gato</h3>
+                <p name="author">Natsume Soseki</p>
+                <p name="edit">Alianza Editorial</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>512</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>14.0 cm</p>
+                <p name="isbn" hidden>9788411483025</p>
+                <p name="price">s/ 77</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71LLblKLkbL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Los Detectives Salvajes</h3>
+                <p name="author">Roberto Bolaño</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>760</p>
+                <p name="height" hidden>18.9 cm</p>
+                <p name="width" hidden>12.7 cm</p>
+                <p name="isbn" hidden>9788466337113</p>
+                <p name="price">s/ 69</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/816ti6vHC4L._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Rayuela</h3>
+                <p name="author">Julio Cortázar</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>736</p>
+                <p name="height" hidden>18.9 cm</p>
+                <p name="width" hidden>12.6 cm</p>
+                <p name="isbn" hidden>9788466331906</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71hDSoZHzcL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Cuentos</h3>
+                <p name="author">Edgar Allan Poe</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>384</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786287624122</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81gqwbTsWuL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Metamorfosis y otros Cuentos</h3>
+                <p name="author">Franz Kafka</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>144</p>
+                <p name="height" hidden>20.6 cm</p>
+                <p name="width" hidden>13.2 cm</p>
+                <p name="isbn" hidden>9788466367813</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71JfLmBL9HL.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Azul Casi Transparente</h3>
+                <p name="author">Ryu Murakami</p>
+                <p name="edit">Anagrama</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>148</p>
+                <p name="height" hidden>20.0 cm</p>
+                <p name="width" hidden>14.0 cm</p>
+                <p name="isbn" hidden>9788433977199</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81hfTxRvUeL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Metafísica de los Tubos</h3>
+                <p name="author">Amélie Nothomb</p>
+                <p name="edit">Anagrama</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>144</p>
+                <p name="height" hidden>20.0 cm</p>
+                <p name="width" hidden>14.0 cm</p>
+                <p name="isbn" hidden>9788433977199</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://cms.anagrama-ed.es/uploads/media/portadas/0001/24/0ca64306c9aac740496efde1789b6d32ba5bf8d7.jpeg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Estupor y Temblores</h3>
+                <p name="author">Amélie Nothomb</p>
+                <p name="edit">Anagrama</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>144</p>
+                <p name="height" hidden>20.0 cm</p>
+                <p name="width" hidden>14.0 cm</p>
+                <p name="isbn" hidden>9788433960764</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61qD+4rtZML._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Ni de Eva ni de Adán</h3>
+                <p name="author">Amélie Nothomb</p>
+                <p name="edit">Anagrama</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>176</p>
+                <p name="height" hidden>20.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788433973825</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61s6sescTyL.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Nostalgia Feliz</h3>
+                <p name="author">Amélie Nothomb</p>
+                <p name="edit">Anagrama</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>144</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>14.0 cm</p>
+                <p name="isbn" hidden>9788433960092</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71q1d7VdFCL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">De qué hablamos cuando hablamos de amor</h3>
+                <p name="author">Raymond Carver</p>
+                <p name="edit">Anagrama</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>160</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.0 cm</p>
+                <p name="isbn" hidden>9788433920669</p>
+                <p name="price">s/ 45</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/51WNGDNpb5L._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Seda</h3>
+                <p name="author">Alessandro Baricco</p>
+                <p name="edit">Anagrama</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>128</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>14.0 cm</p>
+                <p name="isbn" hidden>9788433960771</p>
+                <p name="price">s/ 45</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81yKEP4BF7L._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Cartero</h3>
+                <p name="author">Charles Bukowski</p>
+                <p name="edit">Anagrama</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>192</p>
+                <p name="height" hidden>20.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788433920638</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/91GylDZiEIL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Rojo y Negro</h3>
+                <p name="author">Stendhal</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>624</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788467057386</p>
+                <p name="price">s/ 65</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81K7246pVdL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">2666</h3>
+                <p name="author">Roberto Bolaño</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>1184</p>
+                <p name="height" hidden>19.1 cm</p>
+                <p name="width" hidden>12.7 cm</p>
+                <p name="isbn" hidden>9788466337120</p>
+                <p name="price">s/ 79</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61TLINIj1DL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Tan Poca Vida</h3>
+                <p name="author">Hanya Yanagihara</p>
+                <p name="edit">Lumen</p>
+                <p name="format">Tapa Blanda con Solapas</p>
+                <p name="pages" hidden>1008</p>
+                <p name="height" hidden>23.0 cm</p>
+                <p name="width" hidden>15.2 cm</p>
+                <p name="isbn" hidden>9788426403278</p>
+                <p name="price">s/ 99</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/618s2tZv8fL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Caída</h3>
+                <p name="author">Albert Camus</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>128</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788466354769</p>
+                <p name="price">s/ 45</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81oAQSQIb3L._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Mujercitas</h3>
+                <p name="author">Louisa May Alcott</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>688</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788408216636</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://proassets.planetadelibros.com.pe/usuaris/libros/fotos/295/original/portada_orgullo-y-prejuicio_jane-austen_201903202025.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Orgullo y Prejuicio</h3>
+                <p name="author">Jane Austen</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>352</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124429002</p>
+                <p name="price">s/ 20</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://proassets.planetadelibros.com.pe/usuaris/libros/fotos/295/original/portada_frankenstein_mary-shelley_202010021945.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Frankenstein</h3>
+                <p name="author">Mary Shelley</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>300</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124429057</p>
+                <p name="price">s/ 20</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.planetadelibros.com.pe/usuaris/libros/thumbs/ea6623b6-2a34-40b1-9932-eb9dfdf36a93/d_1200_1200/portada_cuentos_edgar-allan-poe_201903202026.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Cuentos</h3>
+                <p name="author">Edgar Allan Poe</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>384</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124632136</p>
+                <p name="price">s/ 20</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://proassets.planetadelibros.com.pe/usuaris/libros/thumbs/c3dd6b27-427c-42d7-80e0-d0e5ee6ebffe/d_1200_1200/portada_la-metamorfosis_franz-kafka_201903200158.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Metamorfosis y otros Cuentos</h3>
+                <p name="author">Franz Kafka</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>384</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124429002</p>
+                <p name="price">s/ 20</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.planetadelibros.com.pe/usuaris/libros/fotos/295/original/portada_iliada_homero_201903202248.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Iliada</h3>
+                <p name="author">Homero</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>464</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124429002</p>
+                <p name="price">s/ 20</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.planetadelibros.com.pe/usuaris/libros/fotos/295/original/portada_el-retrato-de-dorian-gray_oscar-wilde_202010021945.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Retrato de Dorian Grey</h3>
+                <p name="author">Oscar Wilde</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>352</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124429002</p>
+                <p name="price">s/ 20</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.planetadelibros.com.pe/usuaris/libros/fotos/295/original/portada_odisea_homero_201903202248.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Odisea</h3>
+                <p name="author">Homero</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>464</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124429002</p>
+                <p name="price">s/ 20</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.planetadelibros.com.pe/usuaris/libros/thumbs/0f21f992-faf3-47f9-b854-f26c558f9e73/d_1200_1200/portada_bodas-de-sangre_federico-garcia-lorca_201903202012.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Bodas de Sangre</h3>
+                <p name="author">Federico García Lorca</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>464</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124429002</p>
+                <p name="price">s/ 20</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://www.valdemar.com/wp-content/uploads/CD-004.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Monje</h3>
+                <p name="author">Matthew Lewis</p>
+                <p name="edit">Valdemar</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>504</p>
+                <p name="height" hidden>19.5 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788477026853</p>
+                <p name="price">s/ 75</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.albaeditorial.es/wp-content/uploads/2020/10/9788490653517-crimen-y-castigo-alba-editorial.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Crimen y Castigo</h3>
+                <p name="author">Fiódor Dostoievski</p>
+                <p name="edit">Alba Editorial</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>640</p>
+                <p name="height" hidden>22.0 cm</p>
+                <p name="width" hidden>16.0 cm</p>
+                <p name="isbn" hidden>9788490653517</p>
+                <p name="price">s/ 110</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81LqYLufQOL.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Pack Distopías Maestras: 1984, Fahrenheit 451, Un mundo Feliz</h3>
+                <p name="author">George Orwell, Ray Bradbury y Aldous Huxley</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>480</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788466359542</p>
+                <p name="price">s/ 110</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81c+-hFTl8L.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Anna Karénina</h3>
+                <p name="author">Lev Tolstói</p>
+                <p name="edit">Alba Editorial</p>
+                <p name="format">Tapa Blanda con Solapas</p>
+                <p name="pages" hidden>1008</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>14.0 cm</p>
+                <p name="isbn" hidden>9788484288442</p>
+                <p name="price">s/ 79</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/817Nr+t+hnL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Cien Años de Soledad, Edición Conmemorativa RAE</h3>
+                <p name="author">Gabriel García Márquez</p>
+                <p name="edit">Alfaguara</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>752</p>
+                <p name="height" hidden>20.5 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788420471839</p>
+                <p name="price">s/ 69</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61-D06GIMQL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Don Quijote De La Mancha, Edición Conmemorativa RAE</h3>
+                <p name="author">Miguel de Cervantes Saavedra</p>
+                <p name="edit">Alfaguara</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>1350</p>
+                <p name="height" hidden>20.5 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788420467283</p>
+                <p name="price">s/ 65</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71knbMWZZLL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Borges Esencial, Edición Conmemorativa RAE</h3>
+                <p name="author">Jorge Luis Borges</p>
+                <p name="edit">Alfaguara</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>800</p>
+                <p name="height" hidden>20.6 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788420479781</p>
+                <p name="price">s/ 79</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81hKxZ5cCOL.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Los Ríos Profundos, Edición Conmemorativa RAE</h3>
+                <p name="author">José María Arguedas</p>
+                <p name="edit">Alfaguara</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>552</p>
+                <p name="height" hidden>20.5 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788420461885</p>
+                <p name="price">s/ 79</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://www.penguinlibros.com/es/4457590-large_default/la-vida-breve.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Vida Breve, Edición Conmemorativa RAE</h3>
+                <p name="author">Juan Carlos Onetti</p>
+                <p name="edit">Alfaguara</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>560</p>
+                <p name="height" hidden>20.5 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788420477626</p>
+                <p name="price">s/ 75</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71PCuzstT7L.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Vegetariana</h3>
+                <p name="author">Han Kang</p>
+                <p name="edit">Random House</p>
+                <p name="format">Tapa Blanda con Solapas</p>
+                <p name="pages" hidden>168</p>
+                <p name="height" hidden>23.0 cm</p>
+                <p name="width" hidden>13.9 cm</p>
+                <p name="isbn" hidden>9786125080370</p>
+                <p name="price">s/ 65</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71oUUqtpMiL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Amor en Tiempos del Cólera</h3>
+                <p name="author">Gabriel García Márquez</p>
+                <p name="edit">Random House</p>
+                <p name="format">Tapa Blanda con Solapas</p>
+                <p name="pages" hidden>496</p>
+                <p name="height" hidden>24.0 cm</p>
+                <p name="width" hidden>14.4 cm</p>
+                <p name="isbn" hidden>9788439728351</p>
+                <p name="price">s/ 65</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/51M1VCP0NyL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Montaña Mágica</h3>
+                <p name="author">Thomas Mann</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>1056</p>
+                <p name="height" hidden>19.6 cm</p>
+                <p name="width" hidden>13.5 cm</p>
+                <p name="isbn" hidden>9788466373326</p>
+                <p name="price">s/ 69</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.albaeditorial.es/wp-content/uploads/2020/10/9788490651926-los-demonios-alba-editorial.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Los Demonios</h3>
+                <p name="author">Fiódor Dostoievski</p>
+                <p name="edit">Alba Editorial</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>792</p>
+                <p name="height" hidden>22.0 cm</p>
+                <p name="width" hidden>16.0 cm</p>
+                <p name="isbn" hidden>9788490651926</p>
+                <p name="price">s/ 159</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/91kg+nPZfyL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Idiota</h3>
+                <p name="author">Fiódor Dostoievski</p>
+                <p name="edit">Alba Editorial</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>776</p>
+                <p name="height" hidden>22.0 cm</p>
+                <p name="width" hidden>16.0 cm</p>
+                <p name="isbn" hidden>9788490656075</p>
+                <p name="price">s/ 159</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61-RD53kLLL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Guerra y Paz</h3>
+                <p name="author">Lev Tolstói</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>1840</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788408195375</p>
+                <p name="price">s/ 89</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71hT7lqYKdL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Los Demonios</h3>
+                <p name="author">Fiódor Dostoievski</p>
+                <p name="edit">Alianza Editorial</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>912</p>
+                <p name="height" hidden>18.0 cm</p>
+                <p name="width" hidden>12.0 cm</p>
+                <p name="isbn" hidden>9788420664453</p>
+                <p name="price">s/ 89</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61SsauAn-KL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Crimen y Castigo</h3>
+                <p name="author">Fiódor Dostoievski</p>
+                <p name="edit">Alianza Editorial</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>832</p>
+                <p name="height" hidden>18.0 cm</p>
+                <p name="width" hidden>12.0 cm</p>
+                <p name="isbn" hidden>9788420665658</p>
+                <p name="price">s/ 79</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/51kmuPz-fiL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Resurección</h3>
+                <p name="author">Lev Tolstói</p>
+                <p name="edit">Alianza Editorial</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>752</p>
+                <p name="height" hidden>18.0 cm</p>
+                <p name="width" hidden>12.2 cm</p>
+                <p name="isbn" hidden>9788420665740</p>
+                <p name="price">s/ 79</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61fwcnFmmpL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Guardián Entre el Centeno</h3>
+                <p name="author">J. D. Salinger</p>
+                <p name="edit">Alianza Editorial</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>288</p>
+                <p name="height" hidden>18.0 cm</p>
+                <p name="width" hidden>12.0 cm</p>
+                <p name="isbn" hidden>9788420674209</p>
+                <p name="price">s/ 67</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.albaeditorial.es/wp-content/uploads/2020/10/9788484285618-grandes-esperanzas-alba-editorial.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Grandes Esperanzas</h3>
+                <p name="author">Charles Dickens</p>
+                <p name="edit">Alba Editorial</p>
+                <p name="format">Tapa Blanda con Solapas</p>
+                <p name="pages" hidden>528</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>14.0 cm</p>
+                <p name="isbn" hidden>9788484285618</p>
+                <p name="price">s/ 67</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71SAmNAIyqL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Adolescente</h3>
+                <p name="author">Fiódor Dostoievski</p>
+                <p name="edit">Alba Editorial</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>688</p>
+                <p name="height" hidden>22.0 cm</p>
+                <p name="width" hidden>16.0 cm</p>
+                <p name="isbn" hidden>9788490658185</p>
+                <p name="price">s/ 150</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61BmcxsQixL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Frankenstein</h3>
+                <p name="author">Mary Shelley</p>
+                <p name="edit">Austral</p>
+                <p name="format"></p>
+                <p name="pages" hidden>304</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786287624306</p>
+                <p name="price">s/ 45</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://www.catedra.com/imagenes/libros/grande/9788437604183-pedro-paramo.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Pedro Páramo</h3>
+                <p name="author">Juan Rulfo</p>
+                <p name="edit">Ediciones Cátedra</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>296</p>
+                <p name="height" hidden>17.5 cm</p>
+                <p name="width" hidden>11.5 cm</p>
+                <p name="isbn" hidden>9788437604183</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/51ikGSHjRfL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Túnel</h3>
+                <p name="author">Ernesto Sabato</p>
+                <p name="edit">Ediciones Cátedra</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>168</p>
+                <p name="height" hidden>18.0 cm</p>
+                <p name="width" hidden>11.0 cm</p>
+                <p name="isbn" hidden>9788437600895</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81M-bGp+5AS._AC_UF1000,1000_QL80_DpWeblab_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Montaña Mágica</h3>
+                <p name="author">Thomas Mann</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>1056</p>
+                <p name="height" hidden>18.9 cm</p>
+                <p name="width" hidden>12.6 cm</p>
+                <p name="isbn" hidden>9788466352406</p>
+                <p name="price">s/ 50</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/91CZONTFNgL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Señor de Los Anillos, El Retorno del Rey</h3>
+                <p name="author">J. R. R. Tolkien</p>
+                <p name="edit">Minotauro</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>520</p>
+                <p name="height" hidden>23.5 cm</p>
+                <p name="width" hidden>15.5 cm</p>
+                <p name="isbn" hidden>9788445009611</p>
+                <p name="price">s/ 65</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61U5qhyxCwL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Kafka en la Orilla</h3>
+                <p name="author">Haruki Murakami</p>
+                <p name="edit">Tusquets</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>720</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788483835241</p>
+                <p name="price">s/ 67</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61U+37elhIL.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Senda del Perdedor</h3>
+                <p name="author">Charles Bukowski</p>
+                <p name="edit">Anagrama</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>288</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.0 cm</p>
+                <p name="isbn" hidden>9788433914699</p>
+                <p name="price">s/ 59</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.anagrama-ed.es/uploads/media/portadas/0001/20/e94debbbd486f93f98b6c1042a19e6d45a9770ea.jpeg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Lolita</h3>
+                <p name="author">Vladimir Nabokov</p>
+                <p name="edit">Anagrama</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>392</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788433960177</p>
+                <p name="price">s/ 55</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://images.penguinrandomhouse.com/cover/9788491052166"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Cuentos Completos</h3>
+                <p name="author">Edgar Allan Poe</p>
+                <p name="edit">Penguin Clásicos</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>1272</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9789588925615</p>
+                <p name="price">s/ 65</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/91G2sEuVCKS._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Crimen y Castigo</h3>
+                <p name="author">Fiódor Dostoievski</p>
+                <p name="edit">Penguin Clásicos</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>752</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9789588925295</p>
+                <p name="price">s/ 55</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81QdaBiC7tL.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Pantaleón y las Visitadoras</h3>
+                <p name="author">Mario Vargas Llosa</p>
+                <p name="edit">Alfaguara</p>
+                <p name="format">Tapa Blanda con Solapas</p>
+                <p name="pages" hidden>344</p>
+                <p name="height" hidden>23.9 cm</p>
+                <p name="width" hidden>15.4 cm</p>
+                <p name="isbn" hidden>9786125195029</p>
+                <p name="price">s/ 59</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81u8RSD9R7L._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Ciudad y los Perros</h3>
+                <p name="author">Mario Vargas Llosa</p>
+                <p name="edit">Alfaguara</p>
+                <p name="format">Tapa Blanda con Solapas</p>
+                <p name="pages" hidden>488</p>
+                <p name="height" hidden>24.0 cm</p>
+                <p name="width" hidden>15.0 cm</p>
+                <p name="isbn" hidden>9788420454054</p>
+                <p name="price">s/ 69</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/714EITMqMKL.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Conversación en la Catedral</h3>
+                <p name="author">Mario Vargas Llosa</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>736</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124262555</p>
+                <p name="price">s/ 57</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71RFm9BDOFL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Travesuras de la Niña Mala</h3>
+                <p name="author">Mario Vargas Llosa</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>432</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124262722</p>
+                <p name="price">s/ 47</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71adDQ3WVwL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Tía Julia y el Escribidor</h3>
+                <p name="author">Mario Vargas Llosa</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>496</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124262739</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/91TvVQS7loL._AC_UF1000,1000_QL80_DpWeblab_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Cien Años de Soledad</h3>
+                <p name="author">Gabriel García Márquez</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>496</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.6 cm</p>
+                <p name="isbn" hidden>9786124262784</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/51TKw9ZfORL.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Señor de Los Anillos, El Retorno del Rey</h3>
+                <p name="author">J. R. R. Tolkien</p>
+                <p name="edit">Booket</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>608</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788445000687</p>
+                <p name="price">s/ 45</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81n9bnRX9-L.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Abaddon El Exterminador</h3>
+                <p name="author">Ernesto Sábato</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>480</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788410138407</p>
+                <p name="price">s/ 40</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/715Hu8pUm2L._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">It</h3>
+                <p name="author">Stephen King</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>1504</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788466357302</p>
+                <p name="price">s/ 69</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81ySgYEwArL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Resplandor</h3>
+                <p name="author">Stephen King</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>688</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788490328729</p>
+                <p name="price">s/ 55</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/911vPTwgMJL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Doctor Sueño</h3>
+                <p name="author">Stephen King</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>608</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788466357326</p>
+                <p name="price">s/ 45</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71leuaId3-L._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Milla Verde</h3>
+                <p name="author">Stephen King</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>448</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9789585579705</p>
+                <p name="price">s/ 42</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81fnyFkZ07L._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Misery</h3>
+                <p name="author">Stephen King</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>400</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788466345255</p>
+                <p name="price">s/ 55</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://imagessl3.casadellibro.com/a/l/s7/53/9788497595353.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Misery</h3>
+                <p name="author">Stephen King</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>400</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124463280</p>
+                <p name="price">s/ 45</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81dxFCnAp0L._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Harry Potter y la Piedra Filosofal</h3>
+                <p name="author">J.K. Rowling</p>
+                <p name="edit">Salamandra Bolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>288</p>
+                <p name="height" hidden>20.4 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9789585234048</p>
+                <p name="price">s/ 45</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81Uhrml3V4L.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Harry Potter y la Cámara Secreta</h3>
+                <p name="author">J.K. Rowling</p>
+                <p name="edit">Salamandra Bolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>320</p>
+                <p name="height" hidden>20.4 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788418173127</p>
+                <p name="price">s/ 45</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71hz+5ucK7L._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Ensayo Sobre la Ceguera</h3>
+                <p name="author">José Saramago</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>376</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.6 cm</p>
+                <p name="isbn" hidden>9786124262869</p>
+                <p name="price">s/ 49</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/718NKi1s6yL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Pedro Páramo</h3>
+                <p name="author">Juan Rulfo</p>
+                <p name="edit">Rm Verlag, S.L</p>
+                <p name="format">Tapa Blanda con Solapas</p>
+                <p name="pages" hidden>136</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>13.5 cm</p>
+                <p name="isbn" hidden>9788493442606</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81BHIrBRalL._UF894,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Gallo de Oro</h3>
+                <p name="author">Juan Rulfo</p>
+                <p name="edit">Rm Verlag, S.L</p>
+                <p name="format">Tapa Blanda con Solapas</p>
+                <p name="pages" hidden>208</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788417047146</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71PGCm0l-xL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Llano en Llamas</h3>
+                <p name="author">Juan Rulfo</p>
+                <p name="edit">Rm Verlag, S.L</p>
+                <p name="format">Tapa Blanda con Solapas</p>
+                <p name="pages" hidden>174</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>13.5 cm</p>
+                <p name="isbn" hidden>9788493442613</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://www.penguinlibros.com/pe/5255870/la-peste.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Peste</h3>
+                <p name="author">Albert Camus</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>256</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124463792</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/91+n9pB8JoL.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Colmillo Blanco</h3>
+                <p name="author">Jack London</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>352</p>
+                <p name="height" hidden>17.5 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788408215097</p>
+                <p name="price">s/ 37</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/619OywjEYUL.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Mito de Sísifo</h3>
+                <p name="author">Albert Camus</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>160</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124463877</p>
+                <p name="price">s/ 37</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71C8mRCNKCS._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Extranjero</h3>
+                <p name="author">Albert Camus</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>128</p>
+                <p name="height" hidden>18.9 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124463709</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61qf7Qv++PL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Muerte Feliz</h3>
+                <p name="author">Albert Camus</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>160</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788466354967</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71LE8Hi+pbL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Fahrenheit 451</h3>
+                <p name="author">Ray Bradbury</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>272</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786073806749</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://images-na.ssl-images-amazon.com/images/I/71sOSrd+JxL._AC_UL600_SR600,600_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">1984</h3>
+                <p name="author">George Orwell</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>352</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124262135</p>
+                <p name="price">s/ 35</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71r+sjgsvLL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Homenaje a Cataluña</h3>
+                <p name="author">George Orwell</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>272</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788499890876</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://prodimage.images-bn.com/pimages/9786073834414_p0_v1_s1200x630.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Opresión y Resistencia</h3>
+                <p name="author">George Orwell</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>416</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788466354592</p>
+                <p name="price">s/ 35</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81gorDLojAL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Un Mundo Feliz</h3>
+                <p name="author">Aldous Huxley</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>256</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788497594257</p>
+                <p name="price">s/ 35</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://http2.mlstatic.com/D_NQ_NP_628156-MLA85562285572_062025-O.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Los Ríos Profundos</h3>
+                <p name="author">José María Arguedas</p>
+                <p name="edit">Horizonte</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>184</p>
+                <p name="height" hidden>24.0 cm</p>
+                <p name="width" hidden>17.0 cm</p>
+                <p name="isbn" hidden>9786125059260</p>
+                <p name="price">s/ 35</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://http2.mlstatic.com/D_NQ_NP_728924-MLA81003492287_112024-O.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Yawar Fiesta</h3>
+                <p name="author">José María Arguedas</p>
+                <p name="edit">Horizonte</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>128</p>
+                <p name="height" hidden>24.0 cm</p>
+                <p name="width" hidden>17.0 cm</p>
+                <p name="isbn" hidden>9786125059192</p>
+                <p name="price">s/ 29</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.communitas.pe/web/image/product.product/116340/image_1024/%5B9786124842146%5D%20ANTOLOG%C3%8DA?unique=0df9b64"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Antología</h3>
+                <p name="author">José María Arguedas</p>
+                <p name="edit">Horizonte</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>100</p>
+                <p name="height" hidden>24.0 cm</p>
+                <p name="width" hidden>17.0 cm</p>
+                <p name="isbn" hidden>9786124842146</p>
+                <p name="price">s/ 25</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://www.penguinlibros.com/pe/5256288-large_default/relato-de-un-naufrago-col.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Relato de un Náufrago</h3>
+                <p name="author">Gabriel García Márquez</p>
+                <p name="edit">Sudamericana</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>168</p>
+                <p name="height" hidden>21.5 cm</p>
+                <p name="width" hidden>14.0 cm</p>
+                <p name="isbn" hidden>9786124313394</p>
+                <p name="price">s/ 15</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.penguinlibros.com/pe/5256317-large_default/el-coronel-no-tiene-quien-le-escriba-la-hojarasca-col.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Coronel no Tiene Quien le Escriba - La Hojarasca</h3>
+                <p name="author">Gabriel García Márquez</p>
+                <p name="edit">Sudamericana</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>232</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>14.0 cm</p>
+                <p name="isbn" hidden>9786124313356</p>
+                <p name="price">s/ 17</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://www.penguinlibros.com/pe/5256355-large_default/el-otono-del-patriarca-col.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Otoño del Patriarca</h3>
+                <p name="author">Gabriel García Márquez</p>
+                <p name="edit">Sudamericana</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>304</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>14.0 cm</p>
+                <p name="isbn" hidden>9786124313370</p>
+                <p name="price">s/ 17</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://imagessl1.casadellibro.com/a/l/s7/81/9788410989481.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Corazón de las Tinieblas</h3>
+                <p name="author">Joseph Conrad</p>
+                <p name="edit">RBA</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>192</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788411497428</p>
+                <p name="price">s/ 15</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.tesorosliteratura.com.pe/uploads/20240416/PTL_entrega5_ElCuriosoCasoBB_OUT.png"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Curioso caso de Benjamin Button</h3>
+                <p name="author">F. Scott Fitzgerald</p>
+                <p name="edit">RBA</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>142</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788411496506</p>
+                <p name="price">s/ 15</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://tienda.rba.es/media/catalog/product/cache/e19deba3bd6e0cf5a442435035419b9b/H/3/H371002.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Gran Gatsby</h3>
+                <p name="author">F. Scott Fitzgerald</p>
+                <p name="edit">RBA</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>238</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788411496445</p>
+                <p name="price">s/ 15</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://http2.mlstatic.com/D_NQ_NP_630067-MPE106763273164_022026-O.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Novela de Ajedrez</h3>
+                <p name="author">Stefan Zweig</p>
+                <p name="edit">RBA</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>106</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788411499453</p>
+                <p name="price">s/ 15</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://http2.mlstatic.com/D_NQ_NP_616411-MLM80662427761_112024-O.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Carta de una Desconocida</h3>
+                <p name="author">Stefan Zweig</p>
+                <p name="edit">RBA</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>102</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788411497411</p>
+                <p name="price">s/ 15</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.rbalibros.com/medio/2026/02/26/la-senora-dalloway-en-bond-street_1babace7_500x666.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Señora Dalloway en Bond Street</h3>
+                <p name="author">Virginia Woolf</p>
+                <p name="edit">RBA</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>106</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788411496476</p>
+                <p name="price">s/ 15</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://http2.mlstatic.com/D_NQ_NP_955223-MLM78901529189_092024-O.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Abadesa de Castro</h3>
+                <p name="author">Stendhal</p>
+                <p name="edit">RBA</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>176</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788411497459</p>
+                <p name="price">s/ 15</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#"
+                src="https://www.rbalibros.com/medio/2026/02/26/una-habitacion-propia_5f6b1dfc_500x666.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Una Habitación Propia</h3>
+                <p name="author">Virginia Woolf</p>
+                <p name="edit">RBA</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>180</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788411495523</p>
+                <p name="price">s/ 15</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book newbook">
+            <img alt="#" src="https://www.rbalibros.com/medio/2025/11/29/la-felicidad-conyugal_6ebb47df_500x760.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Felicidad Conyugal</h3>
+                <p name="author">Lev Tolstói</p>
+                <p name="edit">RBA</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>168</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788411497398</p>
+                <p name="price">s/ 15</p>
+                <p name="state" hidden>Nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+    </div>
+
+    <h2 class="gallery_header">LIBROS SEMI-NUEVOS</h2>
+    <div class="gallery nonew">
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81FMcpsHTiL.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Vida es Sueño</h3>
+                <p name="author">Pedro Calderón de la Barca</p>
+                <p name="edit">Penguin Clasicos</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>232</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788491050322</p>
+                <p name="price">s/ 35</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/51Nd-Ep6PrL._AC_UF894,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Cuentos de F. Scott Fitzgerald</h3>
+                <p name="author">F. Scott Fitzgerald</p>
+                <p name="edit">Austral</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>176</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788408239376</p>
+                <p name="price">s/ 19</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71g3mpENuaL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Estrella Distante</h3>
+                <p name="author">Roberto Bolaño</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>136</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786287513389</p>
+                <p name="price">s/ 40</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71r-SZpoI0L._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Literatura Nazi en América</h3>
+                <p name="author">Roberto Bolaño</p>
+                <p name="edit">Alfaguara</p>
+                <p name="format">Tapa Blanda con Solapas</p>
+                <p name="pages" hidden>216</p>
+                <p name="height" hidden>24.0 cm</p>
+                <p name="width" hidden>15.0 cm</p>
+                <p name="isbn" hidden>9788420431574</p>
+                <p name="price">s/ 65</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61w9V+AM6kL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Las Cuatro Estaciones II</h3>
+                <p name="author">Stephen King</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>272</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788497931960</p>
+                <p name="price">s/ 39</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61ppzCctZhL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Poesía Reunida (Edición conmemorativa RAE)</h3>
+                <p name="author">César Vallejo</p>
+                <p name="edit">Rae</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>416</p>
+                <p name="height" hidden>20.5 cm</p>
+                <p name="width" hidden>12.9 cm</p>
+                <p name="isbn" hidden>9788410299740</p>
+                <p name="price">s/ 55</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/51UJ6HpnNIL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Señor de los Anillos, Trilogía Completa</h3>
+                <p name="author">J. R. R. Tolkien</p>
+                <p name="edit">Booket</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>1392</p>
+                <p name="height" hidden>20.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788445003022</p>
+                <p name="price">s/ 77</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81ayWNAp4GL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Guerra del Fin del Mundo</h3>
+                <p name="author">Mario Vargas Llosa</p>
+                <p name="edit">Alfaguara</p>
+                <p name="format">Tapa Blanda con Solapas</p>
+                <p name="pages" hidden>824</p>
+                <p name="height" hidden>23.9 cm</p>
+                <p name="width" hidden>15.4 cm</p>
+                <p name="isbn" hidden>9788420476469</p>
+                <p name="price">s/ 55</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61UvGIpfsoL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Ciudad y los Perros</h3>
+                <p name="author">Mario Vargas Llosa</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>448</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124262708</p>
+                <p name="price">s/ 30</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/816QLZKwmIL._UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Señor de Los Anillos, La Comunidad del Anillo</h3>
+                <p name="author">J. R. R. Tolkien</p>
+                <p name="edit">Booket</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>576</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788445000663</p>
+                <p name="price">s/ 37</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/91WnKAeUd1L.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Cementerio de Animales</h3>
+                <p name="author">Stephen King</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>488</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788466357333</p>
+                <p name="price">s/ 37</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81dxFCnAp0L._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Harry Potter y La Piedra Filosofal</h3>
+                <p name="author">J.K. Rowling</p>
+                <p name="edit">Salamandra</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>288</p>
+                <p name="height" hidden>20.4 cm</p>
+                <p name="width" hidden>12.8 cm</p>
+                <p name="isbn" hidden>9786124498015</p>
+                <p name="price">s/ 20</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://images.penguinrandomhouse.com/cover/9786073193917"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Harry Potter y El Prisionero de Azkaban</h3>
+                <p name="author">J.K. Rowling</p>
+                <p name="edit">Salamandra</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>352</p>
+                <p name="height" hidden>22.0 cm</p>
+                <p name="width" hidden>13.5 cm</p>
+                <p name="isbn" hidden>9786073193917</p>
+                <p name="price">s/ 45</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://pictures.abebooks.com/isbn/9786073193924-us.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Harry Potter y El Cáliz de Fuego</h3>
+                <p name="author">J.K. Rowling</p>
+                <p name="edit">Salamandra</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>672</p>
+                <p name="height" hidden>21.8 cm</p>
+                <p name="width" hidden>13.5 cm</p>
+                <p name="isbn" hidden>9786287507531</p>
+                <p name="price">s/ 50</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81P0ISRqIHL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Harry Potter y la Orden del Fénix</h3>
+                <p name="author">J.K. Rowling</p>
+                <p name="edit">Salamandra</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>928</p>
+                <p name="height" hidden>21.8 cm</p>
+                <p name="width" hidden>13.5 cm</p>
+                <p name="isbn" hidden>9786287507517</p>
+                <p name="price">s/ 50</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/81adIyv0apL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Harry Potter y el Misterio del Príncipe</h3>
+                <p name="author">J.K. Rowling</p>
+                <p name="edit">Salamandra Bolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>576</p>
+                <p name="height" hidden>20.4 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788498384482</p>
+                <p name="price">s/ 35</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/9116F++x55L._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Hobbit - Tapa Dura</h3>
+                <p name="author">J. R. R. Tolkien</p>
+                <p name="edit">Minotauro</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>288</p>
+                <p name="height" hidden>23.5 cm</p>
+                <p name="width" hidden>15.5 cm</p>
+                <p name="isbn" hidden>9788445012802</p>
+                <p name="price">s/ 40</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://www.acantilado.es/wp-content/uploads/novela-de-ajedrez.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Novela de Ajedrez</h3>
+                <p name="author">Stefan Zweig</p>
+                <p name="edit">Acantilado</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>96</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9788495359452</p>
+                <p name="price">s/ 29</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/714EITMqMKL.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Conversación en la Catedral</h3>
+                <p name="author">Mario Vargas Llosa</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>736</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788490625620</p>
+                <p name="price">s/ 35</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71RFm9BDOFL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Travesuras de la Niña Mala</h3>
+                <p name="author">Mario Vargas Llosa</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>432</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9788490625927</p>
+                <p name="price">s/ 30</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/91Bi7C1ML0L._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Siddhartha</h3>
+                <p name="author">Hermann Hesse</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>216</p>
+                <p name="height" hidden>18.9 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9789875660830</p>
+                <p name="price">s/ 29</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#"
+                src="https://www.planetadelibros.com.pe/usuaris/libros/fotos/187/original/portada_el-tunel_ernesto-sabato_201703092243.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Túnel</h3>
+                <p name="author">Ernesto Sabato</p>
+                <p name="edit">Booket</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>144</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124507724</p>
+                <p name="price">s/ 20</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/71C8mRCNKCS._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Extranjero</h3>
+                <p name="author">Albert Camus</p>
+                <p name="edit">Debolsillo</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>128</p>
+                <p name="height" hidden>18.9 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124463709</p>
+                <p name="price">s/ 25</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://http2.mlstatic.com/D_NQ_NP_820972-MLA81272360561_122024-O.webp"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Frankenstein</h3>
+                <p name="author">Mary Shelley</p>
+                <p name="edit">Edimat</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>224</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>9786124892684</p>
+                <p name="price">s/ 15</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/51XdKqIio7L._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Llamada de la Selva</h3>
+                <p name="author">Jack London</p>
+                <p name="edit">Navona</p>
+                <p name="format">Tapa dura</p>
+                <p name="pages" hidden>192</p>
+                <p name="height" hidden>17.0 cm</p>
+                <p name="width" hidden>10.5 cm</p>
+                <p name="isbn" hidden>9788417978839</p>
+                <p name="price">s/ 15</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book nonewbook">
+            <img alt="#"
+                src="https://cdn-ilegjjh.nitrocdn.com/ejqufJyIisinuMyfLHCbacgYVWkoIaNa/assets/images/optimized/rev-a97986b/plutonediciones.com/wp-content/uploads/2025/09/22-Fantasma-de-Canterville_2017-min.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Fantasma de Canterville y otros Relatos</h3>
+                <p name="author">Oscar Wilde</p>
+                <p name="edit">Plutón Ediciones</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>128</p>
+                <p name="height" hidden>18.0 cm</p>
+                <p name="width" hidden>12.0 cm</p>
+                <p name="isbn" hidden>9788415089186</p>
+                <p name="price">s/ 10</p>
+                <p name="state" hidden>Semi-nuevo</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+    </div>
+
+    <h2 class="gallery_header">LIBROS DE COLECCIONES ANTIGUAS</h2>
+    <div class="gallery old">
+        <div class="book oldbook">
+            <img alt="#" src="https://m.media-amazon.com/images/I/61tUKYAhYfL._AC_UF1000,1000_QL80_.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Sobre Héroes y Tumbas</h3>
+                <p name="author">Ernesto Sabato</p>
+                <p name="edit">Booket</p>
+                <p name="format">Tapa Blanda</p>
+                <p name="pages" hidden>544</p>
+                <p name="height" hidden>19.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9786124181566</p>
+                <p name="price">s/ 25</p>
+                <p name="state" hidden>Vintage</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book oldbook">
+            <img alt="#" src="./lituma.jpg" onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Lituma en los Andes</h3>
+                <p name="author">Mario Vargas Llosa</p>
+                <p name="edit">Planeta</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>322</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>8408036947</p>
+                <p name="price">s/ 20</p>
+                <p name="state" hidden>Vintage</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book oldbook">
+            <img alt="#" src="./madame.jpg" onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Madame Bovary</h3>
+                <p name="author">Gustave Flaubert</p>
+                <p name="edit">Planeta</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>346</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>8408037730</p>
+                <p name="price">s/ 25</p>
+                <p name="state" hidden>Vintage</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book oldbook">
+            <img alt="#" src="./senor_presidente.jpg" onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">El Señor Presidente</h3>
+                <p name="author">Miguel Ángel Asturias</p>
+                <p name="edit">Planeta</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>240</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>13.0 cm</p>
+                <p name="isbn" hidden>8408036971</p>
+                <p name="price">s/ 19</p>
+                <p name="state" hidden>Vintage</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book oldbook">
+            <img alt="#" src="./la_nausea.jpg" onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Náusea</h3>
+                <p name="author">Jean Paul Sartre</p>
+                <p name="edit">El Comercio Sol90</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>240</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>849611807X</p>
+                <p name="price">s/ 20</p>
+                <p name="state" hidden>Vintage</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book oldbook">
+            <img alt="#" src="./la_colmena.jpg" onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">La Colmena</h3>
+                <p name="author">Camilo José Cela</p>
+                <p name="edit">El Comercio Sol90</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>312</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>8496118150</p>
+                <p name="price">s/ 10</p>
+                <p name="state" hidden>Vintage</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book oldbook">
+            <img alt="#" src="./20poemas.jpg" onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">20 Poemas de Amor y Una Canción Desesperada - Alturas de Machu Picchu </h3>
+                <p name="author">Pablo Neruda</p>
+                <p name="edit">El Comercio Sol90</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>240</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>8496118010</p>
+                <p name="price">s/ 9</p>
+                <p name="state" hidden>Vintage</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book oldbook">
+            <img alt="#" src="./pantaleon.jpg" onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Pantaleón y las Visitadoras</h3>
+                <p name="author">Mario Vargas Llosa</p>
+                <p name="edit">El Comercio Peisa</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>248</p>
+                <p name="height" hidden>21.0 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>9972402193</p>
+                <p name="price">s/ 17</p>
+                <p name="state" hidden>Vintage</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+
+        <div class="book oldbook">
+            <img alt="#" src="./historia_de_dos_ciudades.jpg"
+                onerror="this.onerror=null; this.src='./imgnofound.png';" />
+            <div class="details">
+                <h3 name="title">Historia de Dos Ciudades</h3>
+                <p name="author">Charles Dickens</p>
+                <p name="edit">El Comercio</p>
+                <p name="format">Tapa Dura</p>
+                <p name="pages" hidden>382</p>
+                <p name="height" hidden>21.5 cm</p>
+                <p name="width" hidden>12.5 cm</p>
+                <p name="isbn" hidden>8481301388</p>
+                <p name="price">s/ 12</p>
+                <p name="state" hidden>Vintage</p>
+                <button class="buy-btn">COMPRAR</button>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div id="lightbox">
+        <img alt="#" src="" />
+        <div class="details-box">
+            <h3 name="title"></h3>
+            <p name="author"></p>
+            <p name="edit"></p>
+            <p name="format"></p>
+            <p name="pages"></p>
+            <p name="height"></p>
+            <p name="width"></p>
+            <p name="isbn"></p>
+            <p name="price"></p>
+            <div>
+                <button class="buy-btn">COMPRAR</button>
+                <button class="close-btn" onclick="closeBox()">Cerrar</button>
+                <p name="state" hidden></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    /* ===============================================================
+       LIGHTBOX
+    ================================================================ */
+    const lightbox = document.getElementById('lightbox');
+    const lightImg = lightbox.querySelector('img');
+
+    const lighTitle = lightbox.querySelector('[name="title"]');
+    const lighAuthor = lightbox.querySelector('[name="author"]');
+    const lighEdit = lightbox.querySelector('[name="edit"]');
+    const lighFormat = lightbox.querySelector('[name="format"]');
+    const lighPages = lightbox.querySelector('[name="pages"]');
+    const lighHight = lightbox.querySelector('[name="height"]');
+    const lighWidht = lightbox.querySelector('[name="width"]');
+    const lighIsbn = lightbox.querySelector('[name="isbn"]');
+    const lighPrice = lightbox.querySelector('[name="price"]');
+    const lighState = lightbox.querySelector('[name="state"]');
+
+    document.querySelectorAll('.gallery .book').forEach(book => {
+        const bookImg = book.querySelector('img');
+        const bookTitle = book.querySelector('[name="title"]');
+        bookTitle.style.cursor = 'pointer';
+
+        function openLightbox() {
+            lightImg.src = book.querySelector('img').src;
+
+            lighTitle.textContent = book.querySelector('[name="title" ]').textContent;
+            lighAuthor.textContent = book.querySelector('[name="author"]').textContent;
+            lighEdit.textContent = book.querySelector('[name="edit"  ]').textContent;
+            lighFormat.textContent = book.querySelector('[name="format"]').textContent;
+            lighPages.textContent = book.querySelector('[name="pages" ]').textContent;
+            lighHight.textContent = book.querySelector('[name="height"]').textContent;
+            lighWidht.textContent = book.querySelector('[name="width" ]').textContent;
+            lighIsbn.textContent = book.querySelector('[name="isbn"  ]').textContent;
+            lighPrice.textContent = book.querySelector('[name="price" ]').textContent;
+            lighState.textContent = book.querySelector('[name="state" ]').textContent;
+
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            history.pushState({ lb: 1 }, '');
+        }
+        bookImg.addEventListener('click', openLightbox);
+        bookTitle.addEventListener('click', openLightbox);
+    });
+
+    function closeBox() {
+        lightbox.style.display = 'none';
+        lightImg.src = '';
+        document.body.style.overflow = '';
+        if (history.state && history.state.lb) history.back();
+    }
+    document.addEventListener('keyup', e => { if (e.key === 'Escape') closeBox(); });
+
+    window.addEventListener('popstate', () => {
+        if (lightbox.style.display === 'flex') {
+            closeBox();
+        }
+    });
+
+    /* ===============================================================
+       COMPRA POR WHATSAPP DESDE GALERÍA O LIGHTBOX
+    ================================================================ */
+    document.addEventListener('click', e => {
+        if (!e.target.classList.contains('buy-btn')) return;
+
+        const book = lightbox.style.display === 'flex'
+            ? e.target.closest('#lightbox')
+            : e.target.closest('.book');
+
+        const phone = '51974317597';
+        const extraMsg = 'Hola!! quisiera comprar este libro: ';
+
+        const title = book.querySelector('h3').textContent.trim();
+        const ed = book.querySelector('[name="edit"]').textContent.trim();
+        const prc = book.querySelector('[name="price"]').textContent.trim();
+        const stad = book.querySelector('[name="state"]').textContent.trim();
+
+        const text = encodeURIComponent(
+            extraMsg + '\n' + [title, ed, stad, prc].join('\n') + '\n' + ' Me podría hacer algún descuento?'
+        );
+        window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    });
+
+    /* ===============================================================
+       BUSCADOR + OCULTAR FILTROS
+    ================================================================ */
+    function hideFilters(q) { document.getElementById('filters').style.display = q ? 'none' : ''; }
+
+    const books = Array.from(document.querySelectorAll('.book'));
+    const dataset = books.map(el => ({
+        title: el.querySelector('h3').textContent,
+        meta: Array.from(el.querySelectorAll('.details p')).map(p => p.textContent).join(' '),
+        el
+    }));
+    const fuse = new Fuse(dataset, { keys: ['title', 'meta'], threshold: 0.4 });
+    const $input = document.getElementById('buscador');
+
+    // estado de búsqueda + render conjunto búsqueda ∩ filtro
+    let matchSet = new Set(books);
+    function renderBooks() {
+        const activeFilter = getFilterFromURL();
+        books.forEach(book => {
+            const byFilter = !activeFilter || book.classList.contains(activeFilter);
+            const bySearch = matchSet.has(book);
+            book.style.display = (byFilter && bySearch) ? '' : 'none';
+        });
+    }
+
+    function mostrarResultados(q) {
+        const matches = q ? fuse.search(q).map(r => r.item.el) : books;
+        matchSet = new Set(matches);
+        renderBooks();
+    }
+
+    // AL BUSCAR: limpia cualquier filtro activo
+    $input.addEventListener('keydown', e => {
+        if (e.key !== 'Enter') return;
+        const q = e.target.value.trim();
+
+        const params = new URLSearchParams(location.search);
+        q ? params.set('q', q) : params.delete('q');
+        params.delete('filtro');                    // ← limpia el filtro activo en la URL
+        history.pushState({ query: q }, '',
+            location.pathname + (params.toString() ? '?' + params.toString() : '')
+        );
+
+        mostrarResultados(q);
+        applyFilter(true);                          // ← repinta sin filtro
+        hideFilters(q);
+        $input.blur();
+    });
+
+    function restaurarBusquedaDesdeURL() {
+        const params = new URLSearchParams(location.search);
+        const q = params.get('q') || '';
+        $input.value = q;
+        mostrarResultados(q);
+        hideFilters(q);
+    }
+
+    /* ===============================================================
+       ORDENAMIENTO POR PRECIO ASC / DESC
+    ================================================================ */
+    function getPrice(bookEl) {
+        const priceText = bookEl.querySelector('.details [name="price"]').textContent;
+        const num = parseFloat(priceText.replace(/[^\d.]/g, ''));
+        return isNaN(num) ? 0 : num;
+    }
+
+    const sortBtn = document.getElementById('sort-price');
+    const clearBtn = document.getElementById('clear-sort');
+    const galleries = [...document.querySelectorAll('.gallery')];
+    const headings = galleries.map(g => g.previousElementSibling);
+    let sortedBox = null;
+
+    function hideSections() { galleries.forEach(g => g.style.display = 'none'); headings.forEach(h => h.style.display = 'none'); }
+    function showSections() { galleries.forEach(g => g.style.display = ''); headings.forEach(h => h.style.display = ''); }
+
+    function createSortedBox() {
+        sortedBox = document.createElement('div');
+        sortedBox.id = 'sorted-gallery';
+        sortedBox.className = 'gallery sorted';
+        document.getElementById('filters').insertAdjacentElement('afterend', sortedBox);
+    }
+
+    function restaurar_orden() {
+        if (!sortedBox) return;
+
+        const buckets = {};
+        [...sortedBox.children].forEach(book => {
+            const key = book.dataset.origParent;
+            (buckets[key] = buckets[key] || []).push(book);
+        });
+
+        Object.entries(buckets).forEach(([sel, libros]) => {
+            const parent = document.querySelector(sel);
+            libros.sort((a, b) => a.dataset.origIndex - b.dataset.origIndex)
+                .forEach(book => {
+                    const idx = Number(book.dataset.origIndex);
+                    parent.insertBefore(book, parent.children[idx] || null);
+                });
+        });
+
+        sortedBox.style.display = 'none';
+        showSections();
+        clearBtn.style.display = 'none';
+        sortBtn.classList.remove('active');
+        sortBtn.textContent = 'ORDENAR x PRECIO';
+    }
+
+    sortBtn.addEventListener('click', () => {
+        if (!sortedBox) createSortedBox();
+
+        const allBooks = [...document.querySelectorAll('.book')];
+        allBooks.forEach(b => {
+            if (!b.dataset.origParent) {
+                const parent = b.parentElement;
+                b.dataset.origParent = '.' + [...parent.classList].join('.');
+                b.dataset.origIndex = [...parent.children].indexOf(b);
+            }
+        });
+
+        const order = sortBtn.dataset.order; // asc | desc
+        const sorted = allBooks.sort((a, b) => order === 'asc' ? getPrice(a) - getPrice(b) : getPrice(b) - getPrice(a));
+        hideSections();
+        sortedBox.innerHTML = '';
+        sorted.forEach(b => sortedBox.appendChild(b));
+        sortedBox.style.display = '';
+        clearBtn.style.display = '';
+        sortBtn.classList.add('active');
+
+        if (order === 'asc') {
+            sortBtn.dataset.order = 'desc';
+            sortBtn.textContent = 'menor a mayor ⬇';
+        } else {
+            sortBtn.dataset.order = 'asc';
+            sortBtn.textContent = 'mayor a menor ⬆';
+        }
+    });
+
+    clearBtn.addEventListener('click', restaurar_orden);
+
+    /* ===============================================================
+       FILTROS POR ESTADO (BOTONES)
+    ================================================================ */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+
+    function getFilterFromURL() {
+        const params = new URLSearchParams(location.search);
+        return params.get('filtro') || '';
+    }
+
+    function setFilterToURL(filter, push = true) {
+        const params = new URLSearchParams(location.search);
+        filter ? params.set('filtro', filter) : params.delete('filtro');
+        const newUrl = location.pathname + (params.toString() ? '?' + params.toString() : '');
+        push ? history.pushState({}, '', newUrl) : history.replaceState({}, '', newUrl);
+    }
+
+    function applyFilter(fromPopstate = false) {
+        const activeFilter = getFilterFromURL();
+        filterBtns.forEach(btn => {
+            const isActive = activeFilter && btn.dataset.filter === activeFilter;
+            btn.classList.toggle('active', isActive);
+        });
+        renderBooks();
+        if (!fromPopstate) setFilterToURL(activeFilter);
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', e => {
+            if (e.target.classList.contains('info-btn')) return;
+            const filter = btn.dataset.filter;
+            setFilterToURL(filter);
+            applyFilter(true);
+        });
+    });
+
+    // Carga inicial
+    restaurarBusquedaDesdeURL();
+    applyFilter(true);
+
+    // Popstate unificado
+    window.addEventListener('popstate', () => {
+        restaurarBusquedaDesdeURL();
+        applyFilter(true);
+    });
+
+    /* ===============================================================
+       BOTÓN HOME  (limpia búsqueda, filtro y orden sin recargar)
+    ================================================================ */
+    document.getElementById('home-btn').addEventListener('click', () => {
+        history.pushState({}, '', location.pathname);
+        restaurar_orden();
+        applyFilter(true);
+        mostrarResultados('');
+        hideFilters('');
+    });
+
+    /* ===============================================================
+       TOOLTIP INFO ESTADOS
+    ================================================================ */
+    const infoTexts = {
+        newbook: 'Libros nuevos originales y sellados.',
+        nonewbook: 'Libros originales semi nuevos en excelentes condiciones.',
+        oldbook: 'Libros originales de colecciones antiguas en buen estado. Década(s) de antigúedad, pedacitos de historia.'
+    };
+
+    let tooltipDiv = null, timeoutId = null;
+
+    function closeTooltip() {
+        if (tooltipDiv) {
+            tooltipDiv.classList.remove('show');
+            setTimeout(() => { if (tooltipDiv) { tooltipDiv.remove(); tooltipDiv = null; } }, 200);
+        }
+        if (timeoutId) clearTimeout(timeoutId);
+    }
+
+    document.querySelectorAll('#filters .info-btn').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.stopPropagation();
+            closeTooltip();
+
+            const el = document.createElement('div');
+            el.className = 'filter-tooltip';
+            tooltipDiv = el;
+
+            let prev = btn.previousElementSibling;
+            while (prev && !prev.classList.contains('filter-btn')) prev = prev.previousElementSibling;
+            const type = prev ? prev.dataset.filter : '';
+            el.textContent = infoTexts[type] || 'Sin descripción.';
+
+            document.body.appendChild(el);
+
+            const rect = btn.getBoundingClientRect();
+            const scrollY = window.scrollY || window.pageYOffset;
+            const scrollX = window.scrollX || window.pageXOffset;
+            el.style.top = (rect.bottom + scrollY + 8) + 'px';
+            el.style.left = (rect.left + scrollX) + 'px';
+            el.style.transform = 'translateX(-5.5rem)';
+
+            setTimeout(() => el.classList.add('show'), 10);
+            timeoutId = setTimeout(closeTooltip, 2500);
+        });
+    });
+
+    document.addEventListener('click', e => {
+        if (tooltipDiv && !tooltipDiv.contains(e.target) && !e.target.classList.contains('info-btn')) {
+            closeTooltip();
+        }
+    });
+    window.addEventListener('scroll', closeTooltip);
+
+    /* ===============================================================
+       RESTABLECER ORDEN CUANDO URL VUELVE A BASE
+    ================================================================ */
+    window.addEventListener('popstate', () => {
+        if (!location.search) {
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+        }
+    });
+</script>
+
+
+
+
+
+
+</html>
