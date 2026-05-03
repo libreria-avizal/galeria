@@ -3042,7 +3042,7 @@
         meta: Array.from(el.querySelectorAll('.details p')).map(p => p.textContent).join(' '),
         el
     }));
-    const fuse = new Fuse(dataset, { keys: ['title', 'meta'], threshold: 0.4 });
+    const fuse = new Fuse(dataset, { keys: ['title', 'meta'], threshold: 0.3 });
     const $input = document.getElementById('buscador');
 
     // estado de búsqueda + render conjunto búsqueda ∩ filtro
