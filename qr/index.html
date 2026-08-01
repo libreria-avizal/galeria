@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirigiendo a Librería Avizal...</title>
+    
+    <!-- LÓGICA 1: Redirección nativa de HTML -->
+    <!-- El navegador saltará a la URL indicada inmediatamente (0 segundos) -->
+    <meta http-equiv="refresh" content="0; url=https://github.com/libreria-avizal/galeria/">
+    
+    <!-- LÓGICA 2: Redirección por JavaScript (Respaldo principal) -->
+    <!-- location.replace sustituye la página actual, evitando que el usuario 
+         regrese a esta página de redirección si presiona el botón "Atrás" -->
+    <script>
+        window.location.replace("https://github.com/libreria-avizal/galeria/");
+    </script>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 50px; background-color: #f9f9f9; color: #333;">
+    
+    <!-- LÓGICA 3: Redirección manual (Respaldo visual) -->
+    <!-- Por si el navegador tiene bloqueados los scripts y las redirecciones meta -->
+    <h2>Te estamos llevando a Librería Avizal...</h2>
+    <p>Si la página no carga automáticamente, <a href="https://https://github.com/libreria-avizal/galeria" style="color: #0056b3; font-weight: bold;">haz clic aquí para ir a la galería</a>.</p>
+    
+</body>
+</html>
